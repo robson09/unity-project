@@ -9,6 +9,7 @@ public class PlayerBehaviour : MonoBehaviour
     public Vector3 jump;
     public float jumpForce = 2.0f;
     private float horizontalInput;
+    private float verticalInput;
     private bool isGrounded;
     Rigidbody rb;
 
@@ -43,9 +44,11 @@ public class PlayerBehaviour : MonoBehaviour
 
     void Move()
     {
+        verticalInput = Input.GetAxis("Vertical");
+        float zAxisMovement = rb.velocity.z;
         float yAxisMovement = rb.velocity.y; 
         horizontalInput = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector3(horizontalInput, yAxisMovement, 0);
+        rb.velocity = new Vector3(horizontalInput, yAxisMovement, verticalInput);
         
     }
 }
