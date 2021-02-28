@@ -44,11 +44,10 @@ public class PlayerBehaviour : MonoBehaviour
 
     void Move()
     {
-        verticalInput = Input.GetAxis("Vertical");
-        float zAxisMovement = rb.velocity.z;
         float yAxisMovement = rb.velocity.y; 
+        verticalInput = Input.GetAxis("Vertical");
         horizontalInput = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector3(horizontalInput, yAxisMovement, verticalInput);
+        rb.velocity = new Vector3(horizontalInput, yAxisMovement,verticalInput);
         
     }
 }
